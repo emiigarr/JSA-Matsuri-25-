@@ -1,1 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Event Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    /* Navigation */
+    .navbar {
+      background-color: #333;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .navbar a {
+      color: white;
+      padding: 14px 20px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .navbar a:hover {
+      background-color: #575757;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 28px;
+      padding: 14px 20px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .menu-links {
+      display: flex;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 20px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Responsive styling */
+    @media (max-width: 600px) {
+      .menu-links {
+        display: none;
+        flex-direction: column;
+      }
+      .menu-links a {
+        border-top: 1px solid #444;
+      }
+      .menu-icon {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <span class="menu-icon" onclick="toggleMenu()">☰</span>
+    <div class="menu-links" id="menu">
+      <a onclick="showTab('map')">Map</a>
+      <a onclick="showTab('schedule')">Schedule</a>
+      <a onclick="showTab('sponsors')">Sponsors</a>
+    </div>
+  </div>
+
+  <div id="map" class="tab-content active">
+    <h2>Map</h2>
+    <img src="map.jpg" alt="Event Map" />
+  </div>
+
+  <div id="schedule" class="tab-content">
+    <h2>Performance Schedule</h2>
+    <ul>
+      <li>10:00 AM – Opening Ceremony</li>
+      <li>11:00 AM – Band A</li>
+      <li>1:00 PM – Dance Group</li>
+      <li>3:00 PM – Guest Speaker</li>
+      <li>5:00 PM – Closing Performance</li>
+    </ul>
+  </div>
+
+  <div id="sponsors" class="tab-content">
+    <h2>Our Sponsors</h2>
+    <ul>
+      <li>Company One</li>
+      <li>Organization Two</li>
+      <li>Local Business Three</li>
+    </ul>
+  </div>
+
+  <script>
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+
+      // Hide menu after selection on mobile
+      if (window.innerWidth <= 600) {
+        document.getElementById("menu").style.display = "none";
+      }
+    }
+
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      if (menu.style.display === "flex" || menu.style.display === "block") {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "flex";
+      }
+    }
+  </script>
+
+</body>
+</html>
 
