@@ -1,136 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Event Website</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #ffffff;
-      --primary: #b71c1c;
-      --text: #222;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Noto Serif JP', serif;
-      background-color: var(--bg);
-      color: var(--text);
-    }
-
-    .navbar {
-      background-color: var(--primary);
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-    }
-
-    .navbar .title {
-      color: white;
-      font-weight: 600;
-      font-size: 1.2rem;
-    }
-
-    .menu-icon {
-      display: none;
-      font-size: 28px;
-      color: white;
-      cursor: pointer;
-    }
-
-    .menu-links {
-      display: flex;
-      gap: 15px;
-    }
-
-    .menu-links a {
-      color: white;
-      text-decoration: none;
-      padding: 8px 12px;
-      border-radius: 6px;
-      transition: background 0.3s;
-    }
-
-    .menu-links a:hover {
-      background-color: var(--secondary);
-    }
-
-    .tab-content {
-      display: none;
-      padding: 30px 20px;
-      animation: fade 0.3s ease-in-out;
-    }
-
-    .active {
-      display: block;
-    }
-
-    .card {
-      background: white;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    img {
-      max-width: 100%;
-      border-radius: 8px;
-    }
-
-    ul {
-      padding-left: 20px;
-      line-height: 1.6;
-    }
-
-    @keyframes fade {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    /* Responsive */
-    @media (max-width: 700px) {
-      .menu-links {
-        flex-direction: column;
-        display: none;
-        width: 100%;
-        background-color: var(--primary);
-        position: absolute;
-        top: 60px;
-        left: 0;
-      }
-
-      .menu-links a {
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 12px 20px;
-      }
-
-      .menu-icon {
-        display: block;
-      }
-    }
-  </style>
+  <title>JSA Matsuri 2025/ワシントン大学日本人学生会祭り２０２５</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <div class="navbar">
-    <div class="title">Event Website</div>
+    <div class="title">Matsuri 2025 Website</div>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <div class="menu-links" id="menu">
-      <a onclick="showTab('map')">Map</a>
-      <a onclick="showTab('schedule')">Schedule</a>
-      <a onclick="showTab('sponsors')">Sponsors</a>
+      <a onclick="showTab('map')"><i class="fas fa-map"></i> Map/地図</a>
+      <a onclick="showTab('schedule')"><i class="fas fa-music"></i> Performance Schedule/パフォーマンススケジュール</a>
+      <a onclick="showTab('sponsors')"><i class="fas fa-user-friends"></i> Sponsors/スポンサー</a>
     </div>
   </div>
+  
 
   <div id="map" class="tab-content active">
     <div class="card">
-      <h2>Map</h2>
-      <img src="map.jpg" alt="Event Map" />
+      <h2>Map/地図</h2>
+      <img src="Matsuri_Map.png" alt="Event Map" />
     </div>
   </div>
 
@@ -138,14 +32,26 @@
     <div class="card">
       <h2>Performance Schedule</h2>
       <ul>
-        <li>3:45 PM - 3:50PM: Officer Performace</li>
-        <li>4:00 PM - 4:00 PM: Chanoyu Club</li>
+        <li>3:45 PM - 3:50 PM: Officer Performance</li>
+        <li>4:00 PM - 4:20 PM: Chanoyu Club</li>
         <li>4:30 PM – 4:45 PM: Rain City Sumo</li>
         <li>5:00 PM – 5:20 PM: Jsongs</li>
-        <li>5L35PM - 6:05 PM: Koto Performace</li>
+        <li>5:35 PM - 6:05 PM: Koto Performance</li>
         <li>6:40 PM - 6:55 PM: JSONG band</li>
         <li>7:10 PM - 7:20 PM: Wushu Performance</li>
         <li>7:35 PM - 8:00 PM: Kaede01</li>
+      </ul>
+      <br>
+      <h2>パフォーマンススケジュール</h2>
+      <ul>
+        <li>15:45 - 15:50: スペシャルオフィサーパフォーマンス</li>
+        <li>16:00 - 16:20: 茶道サークル</li>
+        <li>16:30 - 16:45: レインシティー相撲</li>
+        <li>17:00 - 17:20: Jsongs</li>
+        <li>17:35 - 18:05: 筝曲</li>
+        <li>18:40 - 18:55: JSONG band</li>
+        <li>19:10 - 19:20: 武術</li>
+        <li>19:35 - 20:00: Kaede01</li>
       </ul>
     </div>
   </div>
@@ -154,29 +60,23 @@
     <div class="card">
       <h2>Our Sponsors</h2>
       <ul>
-        <li>Kikugo</li>
+        <h3>Kikugo</h3>
         <img src="Kikugo.JPG" alt="Kikugo Logo" />
-        <li>Regulus</li>
-        <img src="map.jpg" alt="Regulus Logo" />
-      </ ul>
+        <p style="margin-top: 10px; font-weight: bold; color: var(--primary);">
+          Click on this link for UW JSA Matsuri x Kikugo <em>*exclusive*</em> member registration campaign for a $10 Starbucks Giftcard!<br>
+          こちらは、ワシントン大学日本人学生会（JSA）および帰国GO主催の「会員登録キャンペーン」に関するご案内です。ご登録いただいた方には、スターバックスのギフトカード（10ドル分）を進呈いたします。
+        </p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScUMyEhVWT55deIA4hriRjkqNh_0MogBU09qCqVIGsJ6tZ6eg/viewform?usp=send_form" target="_blank" style="color: var(--primary); font-weight: bold;">
+          👉 Register Here
+        </a>
+        <br?<br>
+        <h3>Regulus</h3>
+        <img src="Regulus.png" alt="Regulus Logo" />
+      </ul>
     </div>
   </div>
-
-  <script>
-    function showTab(tabId) {
-      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-
-      if (window.innerWidth <= 700) {
-        document.getElementById("menu").style.display = "none";
-      }
-    }
-
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.style.display = (menu.style.display === "flex" || menu.style.display === "block") ? "none" : "flex";
-    }
-  </script>
-
+  
+  <script src="script.js"></script>
 </body>
 </html>
+
