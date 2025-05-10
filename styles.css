@@ -128,23 +128,23 @@
 }
   
  /* Sakura Animation */
-.sakura {
+ .sakura {
     position: fixed;
-    top: -40px;
-    width: 4%;  
-    height: 40px;
-    background-image: url('sakura.png');
+    top: -50px;
+    width: 30px;
+    height: 50px;
+    background-image: url('sakura.png'); /* add a petal-shaped SVG to your project */
     background-size: cover;
+    background-repeat: no-repeat;
     opacity: 100;
-    pointer-events: none;
     z-index: 999;
     animation-name: fall;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-  }
+} 
   
   @keyframes fall {
     to {
       transform: translateY(100vh) rotate(360deg);
     }
-  }   
+  }  
