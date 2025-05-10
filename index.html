@@ -4,65 +4,112 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Event Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
+    :root {
+      --bg: #fdfdfd;
+      --primary: #00796b;
+      --secondary: #004d40;
+      --text: #333;
     }
 
-    /* Navigation */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
     .navbar {
-      background-color: #333;
-      overflow: hidden;
+      background-color: var(--primary);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       position: relative;
     }
 
-    .navbar a {
+    .navbar .title {
       color: white;
-      padding: 14px 20px;
-      display: block;
-      text-decoration: none;
-    }
-
-    .navbar a:hover {
-      background-color: #575757;
+      font-weight: 600;
+      font-size: 1.2rem;
     }
 
     .menu-icon {
       display: none;
       font-size: 28px;
-      padding: 14px 20px;
-      cursor: pointer;
       color: white;
+      cursor: pointer;
     }
 
     .menu-links {
       display: flex;
+      gap: 15px;
+    }
+
+    .menu-links a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    .menu-links a:hover {
+      background-color: var(--secondary);
     }
 
     .tab-content {
       display: none;
-      padding: 20px;
+      padding: 30px 20px;
+      animation: fade 0.3s ease-in-out;
     }
 
     .active {
       display: block;
     }
 
-    img {
-      max-width: 100%;
-      height: auto;
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 800px;
+      margin: 0 auto;
     }
 
-    /* Responsive styling */
-    @media (max-width: 600px) {
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    ul {
+      padding-left: 20px;
+      line-height: 1.6;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
       .menu-links {
-        display: none;
         flex-direction: column;
+        display: none;
+        width: 100%;
+        background-color: var(--primary);
+        position: absolute;
+        top: 60px;
+        left: 0;
       }
+
       .menu-links a {
-        border-top: 1px solid #444;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 12px 20px;
       }
+
       .menu-icon {
         display: block;
       }
@@ -72,7 +119,8 @@
 <body>
 
   <div class="navbar">
-    <span class="menu-icon" onclick="toggleMenu()">☰</span>
+    <div class="title">Event Website</div>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <div class="menu-links" id="menu">
       <a onclick="showTab('map')">Map</a>
       <a onclick="showTab('schedule')">Schedule</a>
@@ -81,56 +129,55 @@
   </div>
 
   <div id="map" class="tab-content active">
-    <h2>Map</h2>
-    <img src="Matsuri_Map.pdf" alt="Event Map" />
+    <div class="card">
+      <h2>Map</h2>
+      <img src="map.jpg" alt="Event Map" />
+    </div>
   </div>
 
   <div id="schedule" class="tab-content">
-    <h2>Performance Schedule</h2>
-    <ul>
-      <li>3:45 PM - 3:50PM: Officer Performace</li>
-      <li>4:00 PM - 4:00 PM: Chanoyu Club</li>
-      <li>4:30 PM – 4:45 PM: Rain City Sumo</li>
-      <li>5:00 PM – 5:20 PM: Jsongs</li>
-      <li>5L35PM - 6:05 PM: Koto Performace</li>
-      <li>6:40 PM - 6:55 PM: JSONG band</li>
-      <li>7:10 PM - 7:20 PM: Wushu Performance</li>
-      <li>7:35 PM - 8:00 PM: Kaede01</li>
-    </ul>
+    <div class="card">
+      <h2>Performance Schedule</h2>
+      <ul>
+        <li>3:45 PM - 3:50PM: Officer Performace</li>
+        <li>4:00 PM - 4:00 PM: Chanoyu Club</li>
+        <li>4:30 PM – 4:45 PM: Rain City Sumo</li>
+        <li>5:00 PM – 5:20 PM: Jsongs</li>
+        <li>5L35PM - 6:05 PM: Koto Performace</li>
+        <li>6:40 PM - 6:55 PM: JSONG band</li>
+        <li>7:10 PM - 7:20 PM: Wushu Performance</li>
+        <li>7:35 PM - 8:00 PM: Kaede01</li>
+      </ul>
+    </div>
   </div>
 
   <div id="sponsors" class="tab-content">
-    <h2>Our Sponsors</h2>
-    <ul>
-      <li>Kikugo</li>
-      <img src="Kikugo.JPG" alt="Kikugo Logo" />
-      <li>Regulus</li>
-      <img src="map.jpg" alt="Regulus Logo" />
-    </ul>
+    <div class="card">
+      <h2>Our Sponsors</h2>
+      <ul>
+        <li>Kikugo</li>
+        <img src="Kikugo.JPG" alt="Kikugo Logo" />
+        <li>Regulus</li>
+        <img src="map.jpg" alt="Regulus Logo" />
+      </ ul>
+    </div>
   </div>
 
   <script>
     function showTab(tabId) {
-      const tabs = document.querySelectorAll('.tab-content');
-      tabs.forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
       document.getElementById(tabId).classList.add('active');
 
-      // Hide menu after selection on mobile
-      if (window.innerWidth <= 600) {
+      if (window.innerWidth <= 700) {
         document.getElementById("menu").style.display = "none";
       }
     }
 
     function toggleMenu() {
       const menu = document.getElementById("menu");
-      if (menu.style.display === "flex" || menu.style.display === "block") {
-        menu.style.display = "none";
-      } else {
-        menu.style.display = "flex";
-      }
+      menu.style.display = (menu.style.display === "flex" || menu.style.display === "block") ? "none" : "flex";
     }
   </script>
 
 </body>
 </html>
-
