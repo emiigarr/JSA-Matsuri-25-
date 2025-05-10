@@ -4,17 +4,18 @@
     --text: #222;
   }
   
-  body {
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('waves.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    opacity: 0.98;
-    margin: 0;
-    font-family: 'Noto Serif JP', serif;
-    background-color: var(--bg);
-    color: var(--text);
-    overflow-x: hidden;
-    line-height: 1.6;
+    background-repeat: repeat;
+    background-size: auto;
+    opacity: 0.5;
+    z-index: -1;
   }
   
   .navbar {
@@ -94,8 +95,8 @@
   }
   
   @keyframes fade {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
   
   @media (max-width: 700px) {
@@ -147,3 +148,4 @@
       transform: translateY(100vh) rotate(360deg);
     }
   }  
+  
