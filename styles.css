@@ -129,35 +129,23 @@
   
  /* Sakura Animation */
 .sakura {
-  position: fixed;
-  top: -10px;
-  width: 15px;
-  height: 15px;
-  background: radial-gradient(circle, rgba(255,182,193,0.9) 0%, rgba(255,105,180,0.8) 100%);
-  border-radius: 50% 50% 50% 50%;
-  z-index: 1000;
-  animation: fall 10s linear infinite;
-  pointer-events: none;
-}
-
-@media screen and (max-width: 768px) {
-  .sakura {
-    width: 24px;
-    height: 24px;
-    background: radial-gradient(circle, rgba(255,182,193,0.95) 0%, rgba(255,105,180,0.85) 100%);
-    animation-duration: 8s;
+    position: fixed;
+    top: -40px;
+    width: 4%;  
+    height: 40px;
+    background-image: url('sakura.png');
+    background-size: cover;
+    opacity: 100;
+    pointer-events: none;
+    z-index: 999;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
   }
-}
-
-@keyframes fall {
-  0% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  100% {
-    transform: translateY(100vh) rotate(360deg);
-  }
-}
-
   
-  
-  
+  @keyframes fall {
+    to {
+      transform: translateY(100vh) rotate(360deg);
+    }
+  }  
+ 
