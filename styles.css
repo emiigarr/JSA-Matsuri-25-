@@ -1,0 +1,145 @@
+:root {
+    --bg: #ffffff;
+    --primary: #b71c1c;
+    --text: #222;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Noto Serif JP', serif;
+    background-color: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+  
+  .navbar {
+    background-color: var(--primary);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  
+  .navbar .title {
+    color: white;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
+  
+  .menu-icon {
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .menu-links {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .menu-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+  
+  .menu-links a:hover {
+    background-color: #7f0000;
+  }
+  
+  .tab-content {
+    display: none;
+    padding: 30px 20px;
+    animation: fade 0.3s ease-in-out;
+  }
+  
+  .active {
+    display: block;
+  }
+  
+  .card {
+    background: white;
+    border-left: 5px solid var(--primary);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    max-width: 90%; /* Ensure the cards fit on smaller screens */
+    margin: 0 auto;
+  }
+  
+  img {
+    max-width: 100%;
+    border-radius: 6px;
+  }
+  
+  ul {
+    padding-left: 20px;
+    line-height: 1.7;
+  }
+
+  /* Ensure headers are responsive */
+    h2, h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  @keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @media (max-width: 700px) {
+    .menu-links {
+      flex-direction: column;
+      display: none;
+      width: 100%;
+      background-color: var(--primary);
+      position: absolute;
+      top: 60px;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .menu-links a {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 20px;
+    text-align: center;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .card {
+    padding: 10px;
+    width: 100%;  /* Make the cards take up the full width on small screens */
+  }
+}
+  
+ /* Sakura Animation */
+.sakura {
+    position: fixed;
+    top: -40px;
+    width: 4%;  
+    height: 40px;
+    background-image: url('sakura.png');
+    background-size: cover;
+    opacity: 100;
+    pointer-events: none;
+    z-index: 999;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes fall {
+    to {
+      transform: translateY(100vh) rotate(360deg);
+    }
+  }  
