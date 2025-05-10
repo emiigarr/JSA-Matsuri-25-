@@ -5,6 +5,10 @@
   }
   
   body {
+    background-image: url('wave-pattern.png');
+    background-size: cover;
+    background-attachment: fixed;
+    opacity: 0.98;
     margin: 0;
     font-family: 'Noto Serif JP', serif;
     background-color: var(--bg);
